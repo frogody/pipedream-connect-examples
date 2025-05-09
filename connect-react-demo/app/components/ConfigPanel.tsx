@@ -116,7 +116,7 @@ const PropertyItem = ({
         <TooltipProvider delayDuration={0}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <label className="text-[13px] font-semibold text-neutral-500 border-b border-dotted border-neutral-300 cursor-help">
+              <label className="text-[13px] font-semibold text-neutral-500 border-b border-dotted border-neutral-300 cursor-help" aria-label={name} title={name}>
                 {name}
               </label>
             </TooltipTrigger>
@@ -255,6 +255,8 @@ export const ConfigPanel = () => {
           value={userId || ""}
           className="w-full px-3 py-1.5 text-sm font-mono border rounded bg-zinc-50/50"
           readOnly
+          title="User ID"
+          placeholder="User ID"
         />
       </PropertyItem>
       {selectedComponentType === "trigger" && (
